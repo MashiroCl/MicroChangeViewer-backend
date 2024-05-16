@@ -20,14 +20,14 @@ public class SimplifiedCommitController {
     @Autowired
     private SimplifiedCommitService simplifiedCommitService;
 
-    @GetMapping("/simplifiedCommits")
+    @GetMapping({"/commits", "/commits/"})
     public List<SimplifiedCommit> getAllSimplifiedCommits(){
         return simplifiedCommitService.getAllSimplifiedCommits();
     }
 
-    @GetMapping("/commit/{sha1}")
+    @GetMapping("/commits/{sha1}")
     public SimplifiedCommit getSimplifiedCommit(@PathVariable String sha1){
-        log.info("commit/sha1 {}", sha1);
+        log.info("commits/sha1 {}", sha1);
         return simplifiedCommitService.getSingleSimplifiedCommit(sha1);
     }
 

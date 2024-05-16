@@ -34,7 +34,6 @@ public class SimplifiedCommitService {
         List<SimplifiedCommit> simplifiedCommits = getAllSimplifiedCommits();
         for(SimplifiedCommit simplifiedCommit: simplifiedCommits){
             if(simplifiedCommit.getSha1().equals(sha1)){
-                log.info("simplifiedCommit: {}", simplifiedCommit);
                 return simplifiedCommit;
             }
         }
